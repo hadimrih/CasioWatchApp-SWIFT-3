@@ -11,6 +11,7 @@ import Foundation
 
 @objc protocol btnsPressed {
 
+   @objc optional func btnPressedFromProtocol(btnSelectorId: String)
    @objc optional func btn2PressedFromProtocol()
    @objc optional func btn3PressedFromProtocol()
    @objc optional func btn4PressedFromProtocol()

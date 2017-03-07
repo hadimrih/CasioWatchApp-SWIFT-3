@@ -39,44 +39,14 @@ class WatchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func btn1Pressed(_ sender: UIButton)
+  
+    
+    @IBAction func btnPressed(_ sender: UIButton)
     {
-        print("\(sender.restorationIdentifier)")
-        self.changeStateAnimation()
-        watchManger?.btn1Pressed()
+        watchManger?.btnPressed(btnSelectorId:sender.restorationIdentifier!)
     }
     
-    @IBAction func btn2Pressed(_ sender: UIButton)
-    {
-        watchManger?.btn2Pressed()
-    }
-    
-    @IBAction func btn3Pressed(_ sender: UIButton)
-    {
-        watchManger?.btn3Pressed()
-    }
-    
-    @IBAction func btn4Pressed(_ sender: UIButton)
-    {
-        watchManger?.btn4Pressed()
-    }
-        
-    func changeStateAnimation() -> Void {
-        
-        // Create a CATransition animation
-        let slideInFromLeftTransition = CATransition()
-        
-        // Customize the animation's properties
-        slideInFromLeftTransition.type = "cube"
-        slideInFromLeftTransition.subtype = kCATransitionFromLeft
-        slideInFromLeftTransition.duration = 1
-        slideInFromLeftTransition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        slideInFromLeftTransition.fillMode = kCAFillModeRemoved
-        
-        // Add the animation to the View's layer
-        self.view.layer.add(slideInFromLeftTransition, forKey:nil)
-    }
-    
+       
     /*
     // MARK: - Navigation
 

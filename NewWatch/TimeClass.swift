@@ -56,19 +56,26 @@ class TimeClass: WatchManger,btnsPressed {
         }
     }
     
-    func btn2PressedFromProtocol()
+    func btnPressedFromProtocol(btnSelectorId: String)
+    {
+        let aSel : Selector = NSSelectorFromString(btnSelectorId)
+        
+        performSelector(onMainThread: aSel, with: nil, waitUntilDone: true)
+    }
+    
+    func btn2Pressed()
     {
        self.editing()
     }
     
-    func btn3PressedFromProtocol()
+    func btn3Pressed()
     {
         if canEditTime {
             minutesToAdd += 1
         }
     }
     
-    func btn4PressedFromProtocol()
+    func btn4Pressed()
     {
         if canEditTime {
             hoursToAdd += 1

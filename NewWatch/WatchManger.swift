@@ -63,32 +63,44 @@ class WatchManger: NSObject {
          currentWatchStateObj = nil
     }
     
-    // change state btn
-    func btn1Pressed() -> Void
-    {
-        currentStateIndex += 1
-        if currentStateIndex >= watchInitStatesFuncArr.count
-        {
-            currentStateIndex = 0
+    func changeStateAnimation() -> Void {
+        
+        DispatchQueue.main.async { [weak self] () in
+            // Create a CATransition animation
+            let slideInFromLeftTransition = CATransition()
+            
+            // Customize the animation's properties
+            slideInFromLeftTransition.type = "cube"
+            slideInFromLeftTransition.subtype = kCATransitionFromLeft
+            slideInFromLeftTransition.duration = 1
+            slideInFromLeftTransition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            slideInFromLeftTransition.fillMode = kCAFillModeRemoved
+            
+            // Add the animation to the View's layer
+            self?.viewControllerDelegate?.view.layer.add(slideInFromLeftTransition, forKey:nil)
         }
-    
-        self.deinitCurrentClass()
-        currentWatchState = watchInitStatesFuncArr[currentStateIndex]()
     }
     
-    func btn2Pressed() -> Void
-    {
-        currentWatchState?.btn2PressedFromProtocol?()
-    }
     
-    func btn3Pressed() -> Void
+    // change state btn
+    func btnPressed(btnSelectorId: String)
     {
-        currentWatchState?.btn3PressedFromProtocol?()
-    }
-    
-    func btn4Pressed() -> Void
-    {
-        currentWatchState?.btn4PressedFromProtocol?()
+        if btnSelectorId == "ChangeState"
+        {
+            self.changeStateAnimation()
+            currentStateIndex += 1
+            if currentStateIndex >= watchInitStatesFuncArr.count
+            {
+                currentStateIndex = 0
+            }
+            
+            self.deinitCurrentClass()
+            currentWatchState = watchInitStatesFuncArr[currentStateIndex]()
+
+        }else
+        {
+            currentWatchState?.btnPressedFromProtocol?(btnSelectorId: btnSelectorId)
+        }
     }
     
     func editing()

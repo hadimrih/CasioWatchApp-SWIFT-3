@@ -63,18 +63,24 @@ class StoperClass: WatchManger,btnsPressed {
         
     }
 
+    func btnPressedFromProtocol(btnSelectorId: String)
+    {
+        let aSel : Selector = NSSelectorFromString(btnSelectorId)
+        
+        performSelector(onMainThread: aSel, with: nil, waitUntilDone: true)
+    }
     
-    func btn2PressedFromProtocol()
+    func btn2Pressed()
     {
         self.start()
     }
     
-    func btn3PressedFromProtocol()
+    func btn3Pressed()
     {
         self.stop()
     }
     
-    func btn4PressedFromProtocol()
+    func btn4Pressed()
     {
         self.pause()
     }
