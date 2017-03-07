@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WHq-Cf-Apt">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Watch View Controller-->
+        <scene sceneID="GKP-fx-WZG">
+            <objects>
+                <viewController id="WHq-Cf-Apt" customClass="WatchViewController" customModule="NewWatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fjk-fw-Eq7"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Qw-VX-Lq3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aIC-Vm-ZbP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWn-DG-Z91">
+                                <rect key="frame" x="26" y="321" width="323" height="26"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpE-Df-b5e">
+                                <rect key="frame" x="266" y="30" width="93" height="30"/>
+                                <state key="normal" title="Change State"/>
+                                <connections>
+                                    <action selector="btn1Pressed:" destination="WHq-Cf-Apt" eventType="touchUpInside" id="4LO-fl-PbM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="btn2" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6q-Vd-eIi">
+                                <rect key="frame" x="322" y="617" width="37" height="30"/>
+                                <state key="normal" title="Btn 2"/>
+                                <connections>
+                                    <action selector="btn2Pressed:" destination="WHq-Cf-Apt" eventType="touchUpInside" id="FNp-CM-Bps"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="btn4" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8X-ul-3Ay">
+                                <rect key="frame" x="16" y="617" width="37" height="30"/>
+                                <state key="normal" title="Btn 4"/>
+                                <connections>
+                                    <action selector="btn4Pressed:" destination="WHq-Cf-Apt" eventType="touchUpInside" id="9Rx-cD-ddv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="btn3" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xl0-EM-DIl">
+                                <rect key="frame" x="16" y="30" width="37" height="30"/>
+                                <state key="normal" title="Btn 3"/>
+                                <connections>
+                                    <action selector="btn3Pressed:" destination="WHq-Cf-Apt" eventType="touchUpInside" id="YXk-fP-d3q"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qpa-kq-MUf">
+                                <rect key="frame" x="164" y="120" width="46" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJW-E4-pDk">
+                                <rect key="frame" x="135" y="372" width="104" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Change TimeZone">
+                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="moreTimeZonesBtnPressed:" destination="WHq-Cf-Apt" eventType="touchUpInside" id="Ddz-1j-POl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VJW-E4-pDk" firstAttribute="top" secondItem="PWn-DG-Z91" secondAttribute="bottom" constant="25" id="07W-Xk-mMq"/>
+                            <constraint firstItem="PWn-DG-Z91" firstAttribute="centerX" secondItem="aIC-Vm-ZbP" secondAttribute="centerX" id="3SR-QI-O47"/>
+                            <constraint firstItem="lpE-Df-b5e" firstAttribute="trailing" secondItem="aIC-Vm-ZbP" secondAttribute="trailingMargin" id="3vb-3p-f2T"/>
+                            <constraint firstItem="Qpa-kq-MUf" firstAttribute="centerX" secondItem="aIC-Vm-ZbP" secondAttribute="centerX" id="9wU-vG-bOA"/>
+                            <constraint firstItem="xl0-EM-DIl" firstAttribute="top" secondItem="Fjk-fw-Eq7" secondAttribute="bottom" constant="10" id="CZ8-mD-UL7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PWn-DG-Z91" secondAttribute="trailing" constant="10" id="LTe-p4-LFi"/>
+                            <constraint firstItem="5Qw-VX-Lq3" firstAttribute="top" secondItem="a8X-ul-3Ay" secondAttribute="bottom" constant="20" id="Rn9-bC-Yb9"/>
+                            <constraint firstItem="a8X-ul-3Ay" firstAttribute="leading" secondItem="aIC-Vm-ZbP" secondAttribute="leadingMargin" id="YMY-mf-7Cv"/>
+                            <constraint firstItem="lpE-Df-b5e" firstAttribute="top" secondItem="Fjk-fw-Eq7" secondAttribute="bottom" constant="10" id="d0h-fd-ngR"/>
+                            <constraint firstItem="PWn-DG-Z91" firstAttribute="centerY" secondItem="aIC-Vm-ZbP" secondAttribute="centerY" id="eeG-r9-ilK"/>
+                            <constraint firstItem="PWn-DG-Z91" firstAttribute="leading" secondItem="aIC-Vm-ZbP" secondAttribute="leadingMargin" constant="10" id="hJb-n6-sgV"/>
+                            <constraint firstItem="5Qw-VX-Lq3" firstAttribute="top" secondItem="q6q-Vd-eIi" secondAttribute="bottom" constant="20" id="lZ2-Pp-5Sg"/>
+                            <constraint firstItem="Qpa-kq-MUf" firstAttribute="top" secondItem="Fjk-fw-Eq7" secondAttribute="bottom" constant="100" id="oUw-Qv-jtC"/>
+                            <constraint firstItem="xl0-EM-DIl" firstAttribute="leading" secondItem="aIC-Vm-ZbP" secondAttribute="leadingMargin" id="t66-5s-gPq"/>
+                            <constraint firstItem="VJW-E4-pDk" firstAttribute="centerX" secondItem="aIC-Vm-ZbP" secondAttribute="centerX" id="toc-0B-A7p"/>
+                            <constraint firstItem="q6q-Vd-eIi" firstAttribute="trailing" secondItem="aIC-Vm-ZbP" secondAttribute="trailingMargin" id="vjv-VD-e9y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btn1" destination="lpE-Df-b5e" id="8GL-9a-wpQ"/>
+                        <outlet property="btn2" destination="q6q-Vd-eIi" id="vBZ-Uh-UI0"/>
+                        <outlet property="btn3" destination="xl0-EM-DIl" id="dlr-GC-v6a"/>
+                        <outlet property="btn4" destination="a8X-ul-3Ay" id="5xk-jU-HK0"/>
+                        <outlet property="currentStateLbl" destination="Qpa-kq-MUf" id="lY9-7b-Xnt"/>
+                        <outlet property="displayLabel" destination="PWn-DG-Z91" id="pyu-oa-7y8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rZO-9Z-K6D" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+        </scene>
+    </scenes>
+</document>
