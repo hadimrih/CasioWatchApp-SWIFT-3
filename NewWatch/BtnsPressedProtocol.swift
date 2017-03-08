@@ -9,7 +9,7 @@
 import Foundation
 
 
-@objc protocol btnsPressed {
+@objc protocol CommonModelsActions {
 
    @objc optional func btnPressedFromProtocol(btnSelectorId: String)
    @objc optional func changesBeforeDeinit()

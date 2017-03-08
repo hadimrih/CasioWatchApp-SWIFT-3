@@ -9,7 +9,7 @@
 import UIKit
 import SwiftSpinner
 
-class TimeClass: WatchManger,btnsPressed {
+class TimeClass: WatchManger,CommonModelsActions {
 
   
     var minutesToAdd : Int = 0

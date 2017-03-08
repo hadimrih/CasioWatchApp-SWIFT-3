@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DateClass: WatchManger,btnsPressed
+class DateClass: WatchManger,CommonModelsActions
 {
 
     var daysToAdd : Int = 0

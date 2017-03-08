@@ -17,9 +17,9 @@ class WatchManger: NSObject {
     var canEditTime : Bool = false
     let calendar = Calendar.current
 
-    var watchInitStatesFuncArr : [()->(btnsPressed?)] = []
+    var watchInitStatesFuncArr : [()->(CommonModelsActions?)] = []
     var currentStateIndex : Int = 0
-    var currentWatchState : btnsPressed?
+    var currentWatchState : CommonModelsActions?
 
     static var viewControllerDelegate : WatchViewController?
     
@@ -28,19 +28,19 @@ class WatchManger: NSObject {
         currentWatchState = watchInitStatesFuncArr[currentStateIndex]()
     }
     
-    func initTimeClass() -> btnsPressed? {
+    func initTimeClass() -> CommonModelsActions? {
         
         let time = TimeClass()
         return time
     }
     
-    func initDateClass() -> btnsPressed? {
+    func initDateClass() -> CommonModelsActions? {
         
         let date = DateClass()
         return date
     }
     
-    func initStoperClass() -> btnsPressed? {
+    func initStoperClass() -> CommonModelsActions? {
         
         let stoper = StoperClass()
         return stoper

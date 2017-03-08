@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StoperClass: WatchManger,btnsPressed {
+class StoperClass: WatchManger,CommonModelsActions {
 
     var stoperTimer: Timer = Timer()
     var currentTime = 0
@@ -157,8 +157,9 @@ class StoperClass: WatchManger,btnsPressed {
         stoperTimer.invalidate()
         currentBackgroundDate = Date()
         UserDefaults.standard.setValue(currentBackgroundDate, forKey: "currentBackgroundDate")
-        UserDefaults.standard.setValue(currentTime, forKey: "currentTime")
-
+        if currentTime > 0 {
+          UserDefaults.standard.setValue(currentTime, forKey: "currentTime")
+        }
     }
     
 }
