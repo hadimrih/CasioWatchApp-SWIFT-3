@@ -14,18 +14,16 @@ class StoperClass: WatchManger,btnsPressed {
     var currentTime = 0
     var currentBackgroundDate = Date()
 
-    
-    convenience init (viewControllerDelegate:WatchViewController?)
-    {
-        self.init()
+    override init() {
         
-        self.viewControllerDelegate = viewControllerDelegate
-        DispatchQueue.main.async { [weak self] () in
-            self?.viewControllerDelegate?.displayLabel.text = "00:00:00"
-            self?.viewControllerDelegate?.btn2.setTitle("Start stopper", for: UIControlState.normal)
-            self?.viewControllerDelegate?.btn3.setTitle("Stop stopper", for: UIControlState.normal)
-            self?.viewControllerDelegate?.btn4.setTitle("Pause stopper", for: UIControlState.normal)
-            self?.viewControllerDelegate?.currentStateLbl.text = "Stoper"
+        super.init()
+        
+        DispatchQueue.main.async {
+            WatchManger.viewControllerDelegate?.displayLabel.text = "00:00:00"
+            WatchManger.viewControllerDelegate?.btn2.setTitle("Start stopper", for: UIControlState.normal)
+            WatchManger.viewControllerDelegate?.btn3.setTitle("Stop stopper", for: UIControlState.normal)
+            WatchManger.viewControllerDelegate?.btn4.setTitle("Pause stopper", for: UIControlState.normal)
+            WatchManger.viewControllerDelegate?.currentStateLbl.text = "Stoper"
         }
         
         self.startApp()
@@ -37,16 +35,16 @@ class StoperClass: WatchManger,btnsPressed {
 
     }
     
-    func startApp()
-    {
-        if  (UserDefaults.standard.value(forKey: "currentTime") != nil && UserDefaults.standard.value(forKey: "currentBackgroundDate") != nil )
-        {
+    func startApp() {
+        
+        if  (UserDefaults.standard.value(forKey: "currentTime") != nil && UserDefaults.standard.value(forKey: "currentBackgroundDate") != nil ) {
+            
             currentTime = UserDefaults.standard.value(forKey: "currentTime") as! Int
             currentBackgroundDate = UserDefaults.standard.value(forKey: "currentBackgroundDate") as! Date
         }
         
-        if currentTime != 0 // check if the timer was working before resuming it again
-        {
+        // check if the timer was working before resuming it again
+        if currentTime != 0 {
             let difference = currentBackgroundDate.timeIntervalSince(Date())
             let absDifference = abs(Int(difference))
             currentTime += absDifference
@@ -54,7 +52,8 @@ class StoperClass: WatchManger,btnsPressed {
         }
     }
     
-    func pauseApp(){
+    func pauseApp() {
+        
         self.pause() //invalidate timer
         currentBackgroundDate = Date()
         
@@ -63,38 +62,44 @@ class StoperClass: WatchManger,btnsPressed {
         
     }
 
-    func btnPressedFromProtocol(btnSelectorId: String)
-    {
+    func btnPressedFromProtocol(btnSelectorId: String) {
+        
         let aSel : Selector = NSSelectorFromString(btnSelectorId)
         
-        performSelector(onMainThread: aSel, with: nil, waitUntilDone: true)
+        if self.responds(to: aSel)
+        {
+            performSelector(onMainThread: aSel, with: nil, waitUntilDone: true)
+        }else
+        {
+            print("No selector with this Button Restoration ID: \"\(btnSelectorId)\"")
+        }
     }
     
-    func btn2Pressed()
-    {
+    func btn2Pressed() {
+        
         self.start()
     }
     
-    func btn3Pressed()
-    {
+    func btn3Pressed() {
+        
         self.stop()
     }
     
-    func btn4Pressed()
-    {
+    func btn4Pressed() {
+        
         self.pause()
     }
     
-    func start() -> Void
-    {
+    func start() -> Void {
+        
         if stoperTimer.isValid {
             stoperTimer.invalidate()
         }
         
-        if currentTime == 0
-        {
-            DispatchQueue.main.async { [weak self] () in
-                self?.viewControllerDelegate?.displayLabel.text = "00:00:00"
+        if currentTime == 0 {
+            
+            DispatchQueue.main.async {
+                WatchManger.viewControllerDelegate?.displayLabel.text = "00:00:00"
             }
         }
         
@@ -105,19 +110,18 @@ class StoperClass: WatchManger,btnsPressed {
                                      repeats: true)
     }
 
-    func stop() -> Void
-    {
+    func stop() -> Void {
+        
         currentTime = 0
         stoperTimer.invalidate()
         UserDefaults.standard.removeObject(forKey: "currentTime")
     }
     
-    func pause() -> Void
-    {
+    func pause() -> Void {
+        
         if stoperTimer.isValid {
             stoperTimer.invalidate()
-        }else
-        {
+        } else {
             self.start()
         }
     }
@@ -130,7 +134,7 @@ class StoperClass: WatchManger,btnsPressed {
         let (h,m,s) = secondsToHoursMinutesSeconds(seconds: currentTime)
         
         DispatchQueue.main.async { [weak self] () in
-            self?.viewControllerDelegate?.displayLabel.text = "\(self!.timeText(from: h)):\(self!.timeText(from: m)):\(self!.timeText(from: s))"
+            WatchManger.viewControllerDelegate?.displayLabel.text = "\(self!.timeText(from: h)):\(self!.timeText(from: m)):\(self!.timeText(from: s))"
         }
     }
     
@@ -142,8 +146,8 @@ class StoperClass: WatchManger,btnsPressed {
         return number < 10 ? "0\(number)" : "\(number)"
     }
     
-    func changesBeforeDeinit()
-    {
+    func changesBeforeDeinit() {
+        
         stoperTimer.invalidate()
     }
     

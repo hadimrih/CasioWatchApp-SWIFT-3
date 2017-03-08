@@ -24,12 +24,16 @@ class WatchViewController: UIViewController {
     
     @IBOutlet weak var btn4: UIButton!
     
+    @IBOutlet weak var changeTimeZoneBtn: UIButton!
+    
     var watchManger : WatchManger?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        watchManger = WatchManger.init(viewControllerDelegate: self)
+        WatchManger.viewControllerDelegate = self
+        watchManger = WatchManger()
+        watchManger?.initState()
         
         // Do any additional setup after loading the view.
     }
@@ -39,14 +43,11 @@ class WatchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-  
-    
-    @IBAction func btnPressed(_ sender: UIButton)
-    {
+    @IBAction func btnPressed(_ sender: UIButton) {
+        
         watchManger?.btnPressed(btnSelectorId:sender.restorationIdentifier!)
     }
-    
-       
+           
     /*
     // MARK: - Navigation
 

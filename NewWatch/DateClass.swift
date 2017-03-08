@@ -14,64 +14,67 @@ class DateClass: WatchManger,btnsPressed
     var daysToAdd : Int = 0
     var monthsToAdd : Int = 0
 
-    
-    convenience init (viewControllerDelegate:WatchViewController?)
-    {
-        self.init()
+    override init() {
         
-        self.viewControllerDelegate = viewControllerDelegate
+        super.init()
+        
         let now = Date()
         formatter.dateFormat = "dd/MM/yyyy"
         DispatchQueue.main.async { [weak self] () in
-            self?.viewControllerDelegate?.displayLabel.text = self?.formatter.string(from: now)
-            self?.viewControllerDelegate?.btn2.setTitle("Edit", for: UIControlState.normal)
-            self?.viewControllerDelegate?.btn3.setTitle("increase days", for: UIControlState.normal)
-            self?.viewControllerDelegate?.btn4.setTitle("increase months", for: UIControlState.normal)
-            self?.viewControllerDelegate?.currentStateLbl.text = "Date"
-        }        
+            WatchManger.viewControllerDelegate?.displayLabel.text = self?.formatter.string(from: now)
+            WatchManger.viewControllerDelegate?.btn2.setTitle("Edit", for: UIControlState.normal)
+            WatchManger.viewControllerDelegate?.btn3.setTitle("increase days", for: UIControlState.normal)
+            WatchManger.viewControllerDelegate?.btn4.setTitle("increase months", for: UIControlState.normal)
+            WatchManger.viewControllerDelegate?.currentStateLbl.text = "Date"
+        }
+
     }
     
-    func updateTime()
-    {
+    
+    func updateTime() {
+        
         var now = Date()
         formatter.dateFormat = "dd/MM/yyyy"
         now = calendar.date(byAdding: .day, value: daysToAdd, to: now)!
         now = calendar.date(byAdding: .month, value: monthsToAdd, to: now)!
         
         DispatchQueue.main.async { [weak self] () in
-            self?.viewControllerDelegate?.displayLabel.text = self?.formatter.string(from: now)
+            WatchManger.viewControllerDelegate?.displayLabel.text = self?.formatter.string(from: now)
         }
     }
     
-    func btnPressedFromProtocol(btnSelectorId: String)
-    {
+    func btnPressedFromProtocol(btnSelectorId: String) {
+        
         let aSel : Selector = NSSelectorFromString(btnSelectorId)
         
-        performSelector(onMainThread: aSel, with: nil, waitUntilDone: true)
+        if self.responds(to: aSel) {
+            performSelector(onMainThread: aSel, with: nil, waitUntilDone: true)
+        } else {
+            print("No selector with this Button Restoration ID: \"\(btnSelectorId)\"")
+        }
     }
     
-    func btn2Pressed()
-    {
+    func btn2Pressed() {
+        
         self.editing()
     }
     
-    func btn3Pressed()
-    {
+    func btn3Pressed() {
+        
         if canEditTime {
             daysToAdd += 1
             self.updateTime()
         }
     }
     
-    func btn4Pressed()
-    {
+    func btn4Pressed() {
+        
         if canEditTime {
             monthsToAdd += 1
             self.updateTime()
         }
     }
 
-   
     deinit {
         print("deinit date")
     }

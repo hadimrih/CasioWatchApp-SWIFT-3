@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB901712F799E2138A0AD62F /* Pods_NewWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B3C553BF7AB5501A5FE9AB /* Pods_NewWatch.framework */; };
 		D730616D1E6F005100789A73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D730616C1E6F005100789A73 /* AppDelegate.swift */; };
 		D73061721E6F005100789A73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D73061701E6F005100789A73 /* Main.storyboard */; };
 		D73061741E6F005100789A73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D73061731E6F005100789A73 /* Assets.xcassets */; };
@@ -17,9 +18,16 @@
 		D73061881E6F051900789A73 /* DateClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73061861E6F051900789A73 /* DateClass.swift */; };
 		D73061891E6F051900789A73 /* StoperClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73061871E6F051900789A73 /* StoperClass.swift */; };
 		D730618E1E6F218900789A73 /* BtnsPressedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D730618D1E6F218900789A73 /* BtnsPressedProtocol.swift */; };
+		D73061901E6F99D800789A73 /* TimeZonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D730618F1E6F99D800789A73 /* TimeZonesViewController.swift */; };
+		D73061941E6F99FA00789A73 /* TimeZoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73061931E6F99FA00789A73 /* TimeZoneCell.swift */; };
+		D73061961E6F99FF00789A73 /* ReqHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73061951E6F99FF00789A73 /* ReqHandler.swift */; };
+		D73061981E6F9BAC00789A73 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73061971E6F9BAC00789A73 /* Singleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		45B3C553BF7AB5501A5FE9AB /* Pods_NewWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BFD6E40403AE7D72751DCEB /* Pods-NewWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewWatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewWatch/Pods-NewWatch.debug.xcconfig"; sourceTree = "<group>"; };
+		9845BE76FD17495375CAE2C9 /* Pods-NewWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewWatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewWatch/Pods-NewWatch.release.xcconfig"; sourceTree = "<group>"; };
 		D73061691E6F005100789A73 /* NewWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D730616C1E6F005100789A73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D73061711E6F005100789A73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -32,6 +40,10 @@
 		D73061861E6F051900789A73 /* DateClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateClass.swift; sourceTree = "<group>"; };
 		D73061871E6F051900789A73 /* StoperClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoperClass.swift; sourceTree = "<group>"; };
 		D730618D1E6F218900789A73 /* BtnsPressedProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BtnsPressedProtocol.swift; sourceTree = "<group>"; };
+		D730618F1E6F99D800789A73 /* TimeZonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeZonesViewController.swift; sourceTree = "<group>"; };
+		D73061931E6F99FA00789A73 /* TimeZoneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeZoneCell.swift; sourceTree = "<group>"; };
+		D73061951E6F99FF00789A73 /* ReqHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReqHandler.swift; sourceTree = "<group>"; };
+		D73061971E6F9BAC00789A73 /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +51,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB901712F799E2138A0AD62F /* Pods_NewWatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0424697A26876670C0375583 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8BFD6E40403AE7D72751DCEB /* Pods-NewWatch.debug.xcconfig */,
+				9845BE76FD17495375CAE2C9 /* Pods-NewWatch.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		92949EC2F11C5D336176E0A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45B3C553BF7AB5501A5FE9AB /* Pods_NewWatch.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D73061601E6F005100789A73 = {
 			isa = PBXGroup;
 			children = (
 				D730616B1E6F005100789A73 /* NewWatch */,
 				D730616A1E6F005100789A73 /* Products */,
+				0424697A26876670C0375583 /* Pods */,
+				92949EC2F11C5D336176E0A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,11 +96,14 @@
 		D730616B1E6F005100789A73 /* NewWatch */ = {
 			isa = PBXGroup;
 			children = (
+				D73061971E6F9BAC00789A73 /* Singleton.swift */,
+				D730616C1E6F005100789A73 /* AppDelegate.swift */,
+				D73061701E6F005100789A73 /* Main.storyboard */,
+				D73061921E6F99EF00789A73 /* NetworkClasses */,
+				D73061911E6F99E300789A73 /* CustomCells */,
 				D730618A1E6F213700789A73 /* Protocols */,
 				D73061811E6F010400789A73 /* Classes */,
 				D73061801E6F00E900789A73 /* ViewControllers */,
-				D730616C1E6F005100789A73 /* AppDelegate.swift */,
-				D73061701E6F005100789A73 /* Main.storyboard */,
 				D73061731E6F005100789A73 /* Assets.xcassets */,
 				D73061751E6F005100789A73 /* LaunchScreen.storyboard */,
 				D73061781E6F005100789A73 /* Info.plist */,
@@ -80,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				D730617E1E6F007F00789A73 /* WatchViewController.swift */,
+				D730618F1E6F99D800789A73 /* TimeZonesViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -103,6 +139,22 @@
 			name = Protocols;
 			sourceTree = "<group>";
 		};
+		D73061911E6F99E300789A73 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				D73061931E6F99FA00789A73 /* TimeZoneCell.swift */,
+			);
+			name = CustomCells;
+			sourceTree = "<group>";
+		};
+		D73061921E6F99EF00789A73 /* NetworkClasses */ = {
+			isa = PBXGroup;
+			children = (
+				D73061951E6F99FF00789A73 /* ReqHandler.swift */,
+			);
+			name = NetworkClasses;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,9 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D730617B1E6F005100789A73 /* Build configuration list for PBXNativeTarget "NewWatch" */;
 			buildPhases = (
+				2A7756E131DE2719C7FD2F86 /* [CP] Check Pods Manifest.lock */,
 				D73061651E6F005100789A73 /* Sources */,
 				D73061661E6F005100789A73 /* Frameworks */,
 				D73061671E6F005100789A73 /* Resources */,
+				5815EE825C4BEC3891EA4E21 /* [CP] Embed Pods Frameworks */,
+				617CCFAE8165F8C9A2B2FF21 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -171,6 +226,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2A7756E131DE2719C7FD2F86 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5815EE825C4BEC3891EA4E21 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NewWatch/Pods-NewWatch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		617CCFAE8165F8C9A2B2FF21 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NewWatch/Pods-NewWatch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D73061651E6F005100789A73 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -179,8 +282,12 @@
 				D730617F1E6F007F00789A73 /* WatchViewController.swift in Sources */,
 				D730616D1E6F005100789A73 /* AppDelegate.swift in Sources */,
 				D73061881E6F051900789A73 /* DateClass.swift in Sources */,
+				D73061961E6F99FF00789A73 /* ReqHandler.swift in Sources */,
+				D73061941E6F99FA00789A73 /* TimeZoneCell.swift in Sources */,
 				D730618E1E6F218900789A73 /* BtnsPressedProtocol.swift in Sources */,
+				D73061981E6F9BAC00789A73 /* Singleton.swift in Sources */,
 				D73061891E6F051900789A73 /* StoperClass.swift in Sources */,
+				D73061901E6F99D800789A73 /* TimeZonesViewController.swift in Sources */,
 				D73061831E6F011400789A73 /* WatchManger.swift in Sources */,
 				D73061851E6F03D300789A73 /* TimeClass.swift in Sources */,
 			);
@@ -301,6 +408,7 @@
 		};
 		D730617C1E6F005100789A73 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BFD6E40403AE7D72751DCEB /* Pods-NewWatch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QEUMGSJM2J;
@@ -314,6 +422,7 @@
 		};
 		D730617D1E6F005100789A73 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9845BE76FD17495375CAE2C9 /* Pods-NewWatch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QEUMGSJM2J;
